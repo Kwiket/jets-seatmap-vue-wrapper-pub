@@ -72,6 +72,7 @@ apiKey: 'PROVIDED_API_KEY',
 
 `replace all PROVIDED_VALUES` with your credentials.
 
+```js
 <script>
 import FLIGHT_MOCK from "./mock-data/flight_mock";
 import CONFIG_MOCK from "./mock-data/config_mock";
@@ -96,4 +97,4 @@ export default {
 
 ```
 
-```
+For better undertanding how it works read [React lib doc](https://github.com/Kwiket/jets-seatmap-react-lib-pub) and [Integration instruction](https://github.com/Kwiket/jets-seatmap-react-lib-pub/blob/version-2/SEATMAP-INTEGRATION.md)
