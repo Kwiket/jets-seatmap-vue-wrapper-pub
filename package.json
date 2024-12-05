@@ -15,7 +15,7 @@
   },
   
   "peerDependencies": {
-    "jets_seatmap_react_lib": "github:Kwiket/jets-seatmap-react-lib-pub#version-2",
+    "jets_seatmap_react_lib": "github:Kwiket/jets-seatmap-react-lib-pub#version-3",
     "react": "^18.0.2",
     "react-dom": "^18.0.2"
   },
