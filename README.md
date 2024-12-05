@@ -55,7 +55,18 @@ Use the `JetsSeatmap` in your component
     <JetsSeatmap
       :flight="flight"
       :config="config"
+      :availability="availability"
+      :passengers="passengers"
+      :seatJumpTo="seatJumpTo"
+      :currentDeckIndex="currentDeckIndex"
+      @onSeatMapInited="onSeatMapInited($event)"
+      @onSeatSelected="onSeatSelected($event)"
+      @onSeatUnselected="onSeatUnselected($event)"
       @onTooltipRequested="onTooltipRequested($event)"
+      @onLayoutUpdated="onLayoutUpdated($event)"
+      @onSeatMouseLeave="onSeatMouseLeave($event)"
+      @onSeatMouseClick="onSeatMouseClick($event)"
+      @onAvailabilityApplied="onAvailabilityApplied($event)"
     ></JetsSeatmap>
   </div>
 </template>
@@ -76,13 +87,39 @@ apiKey: 'PROVIDED_API_KEY',
 <script>
 import FLIGHT_MOCK from "./mock-data/flight_mock";
 import CONFIG_MOCK from "./mock-data/config_mock";
+import AVAILABILITY_MOCK from "./mock-data/availability_mock";
+import PASSENGERS_MOCK from "./mock-data/passangers_mock";
+import SEAT_JUMP_TO_MOCK from "./mock-data/seat_jump_to_mock";
+
+const CURRENT_DECK_INDEX = 0;
 
 export default {
   name: "App",
 
   methods: {
+    onSeatMapInited(data) {
+      console.log("onSeatMapInited", data);
+    },
+    onSeatSelected(data) {
+      console.log("onSeatSelected", data);
+    },
+    onSeatUnselected(data) {
+      console.log("onSeatUnselected", data);
+    },
     onTooltipRequested(data) {
       console.log("onTooltipRequested", data);
+    },
+    onLayoutUpdated(data) {
+      console.log("onLayoutUpdated", data);
+    },
+    onSeatMouseLeave(data) {
+      console.log("onSeatMouseLeave", data);
+    },
+    onSeatMouseClick(data) {
+      console.log("onSeatMouseClick", data);
+    },
+    onAvailabilityApplied(data) {
+      console.log("onAvailabilityApplied", data);
     },
   },
 
@@ -90,6 +127,10 @@ export default {
     return {
       flight: FLIGHT_MOCK,
       config: CONFIG_MOCK,
+      passangers: PASSENGERS_MOCK,
+      availability: AVAILABILITY_MOCK,
+      seatJumpTo: SEAT_JUMP_TO_MOCK,
+      currentDeckIndex: CURRENT_DECK_INDEX,
     };
   },
 };
