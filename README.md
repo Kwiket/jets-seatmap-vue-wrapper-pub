@@ -2,15 +2,7 @@
 
 ## Installation and integration
 
-Add as dependency to `package.json` and run `npm install'
-
-```json
-"dependencies": {
-    ...
-     "jets-seatmap-vue-wrapper": "github:Kwiket/jets-seatmap-vue-wrapper"
-    ...
-  },
-```
+Run `npm i @seatmaps.com/react-lib-vue-wrapper`
 
 Import and use component in `main.js` file
 
@@ -21,7 +13,7 @@ import Vue from 'vue';
 import App from './App.vue';
 
 // import and use, component will register itself
-import JetsSeatmap from 'jets-seatmap-vue-wrapper';
+import JetsSeatmap from '@seatmaps.com/react-lib-vue-wrapper';
 Vue.use(JetsSeatmap);
 
 Vue.config.productionTip = false;
@@ -138,4 +130,4 @@ export default {
 
 ```
 
-For better undertanding how it works read [React lib doc](https://github.com/Kwiket/jets-seatmap-react-lib-pub) and [Integration instruction](https://github.com/Kwiket/jets-seatmap-react-lib-pub/blob/version-2/SEATMAP-INTEGRATION.md)
+For better undertanding how it works read [React lib doc](https://www.npmjs.com/package/@seatmaps.com/react-lib) and [Integration instruction](https://github.com/Kwiket/jets-seatmap-react-lib-pub/blob/version-3/README.md)
