@@ -1,28 +1,44 @@
 {
-  "name": "jets-seatmap-vue-wrapper",
-  "version": "0.1.0",
-  "private": true,
-  
+  "name": "@seatmaps.com/react-lib-vue-wrapper",
+  "version": "3.0.2",
+  "description": "Jets seat map React library wrapper.",
   "main": "./dist/jets-seatmap-vue-wrapper.common.js",
   "files": [
-    "dist/*"
+    "dist",
+    "README.md",
+    "LICENSE"
   ],
+  "keywords": [
+    "vue",
+    "seatmap",
+    "seat map",
+    "seatmaps.com",
+    "jets",
+    "aircraft",
+    "plane",
+    "quicket",
+    "library"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Kwiket/jets-seatmap-vue-wrapper-pub.git"
+  },
+  "author": "kwiket",
+  "license": "Apache-2.0",
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
     "lint": "vue-cli-service lint",
     "bundle": "vue-cli-service build --target lib --name jets-seatmap-vue-wrapper ./src/components/index.js"
   },
-  
   "peerDependencies": {
-    "jets_seatmap_react_lib": "github:Kwiket/jets-seatmap-react-lib-pub#version-3",
     "react": "^18.0.2",
     "react-dom": "^18.0.2"
   },
   "dependencies": {
+    "@seatmaps.com/react-lib": "^3.0.50",
     "core-js": "^3.8.3",
     "vue": "^2.6.14"
-    
   },
   "devDependencies": {
     "@babel/core": "^7.12.16",
