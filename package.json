@@ -1,6 +1,6 @@
 {
   "name": "@seatmaps.com/react-lib-vue-wrapper",
-  "version": "3.0.1",
+  "version": "3.0.2",
   "description": "Jets seat map React library wrapper.",
   "main": "./dist/jets-seatmap-vue-wrapper.common.js",
   "files": [
