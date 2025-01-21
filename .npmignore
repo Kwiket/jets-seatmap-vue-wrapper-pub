@@ -1,0 +1,6 @@
+src/
+node_modules/
+vue.config.js
+.babelrc
+.gitignore
+.npmignore

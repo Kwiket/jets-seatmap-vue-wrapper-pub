@@ -1,21 +1,31 @@
 <script>
-import { JetsSeatMap } from "jets_seatmap_react_lib";
-import React from "react";
+import React from 'react';
+import { JetsSeatMap } from '@seatmaps.com/react-lib';
 
-import ReactDOM from "react-dom";
-import { h } from "vue";
+import ReactDOM from 'react-dom';
+import { h } from 'vue';
 
 export default {
-  name: "JetsSeatmap",
+  name: 'JetsSeatmap',
 
-  props: ["flight", "config", "availability", "passengers"],
+  props: {
+    flight: { type: Object, default: () => ({}) },
+    config: { type: Object, default: () => ({}) },
+    availability: { type: Array, default: () => [] },
+    passengers: { type: Array, default: () => [] },
+    seatJumpTo: { type: Object, default: () => null },
+    currentDeckIndex: { type: Number, default: 0 },
+  },
 
   emits: [
-    "onSeatMapInited",
-    "onSeatSelected",
-    "onSeatUnselected",
-    "onTooltipRequested",
-    "onLayoutUpdated",
+    'onSeatMapInited',
+    'onSeatSelected',
+    'onSeatUnselected',
+    'onTooltipRequested',
+    'onLayoutUpdated',
+    'onSeatMouseLeave',
+    'onSeatMouseClick',
+    'onAvailabilityApplied',
   ],
 
   mounted() {
@@ -25,20 +35,32 @@ export default {
       config: this.config,
       availability: this.availability,
       passengers: this.passengers,
+      seatJumpTo: this.seatJumpTo,
+      currentDeckIndex: this.currentDeckIndex,
+
       onSeatMapInited: function (data) {
-        self.$emit("onSeatMapInited", data);
+        self.$emit('onSeatMapInited - ', data);
       },
       onSeatSelected: function (data) {
-        self.$emit("onSeatSelected", data);
+        self.$emit('onSeatSelected - ', data);
       },
       onSeatUnselected: function (data) {
-        self.$emit("onSeatUnselected", data);
+        self.$emit('onSeatUnselected - ', data);
       },
       onTooltipRequested: function (data) {
-        self.$emit("onTooltipRequested", data);
+        self.$emit('onTooltipRequested - ', data);
       },
       onLayoutUpdated: function (data) {
-        self.$emit("onLayoutUpdated", data);
+        self.$emit('onLayoutUpdated - ', data);
+      },
+      onSeatMouseLeave(data) {
+        self.$emit('onSeatMouseLeave - ', data);
+      },
+      onSeatMouseClick(data) {
+        self.$emit('onSeatMouseClick - ', data);
+      },
+      onAvailabilityApplied(data) {
+        self.$emit('onAvailabilityApplied - ', data);
       },
     };
 
@@ -48,9 +70,13 @@ export default {
     );
   },
 
+  beforeDestroy: function () {
+    ReactDOM.unmountComponentAtNode(this.$refs.wrapper);
+  },
+
   render: function () {
-    return h("div", {
-      ref: "wrapper",
+    return h('div', {
+      ref: 'wrapper',
     });
   },
 };
