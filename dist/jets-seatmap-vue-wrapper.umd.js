@@ -195,28 +195,28 @@ var external_commonjs_vue_commonjs2_vue_root_Vue_ = __webpack_require__(203);
       seatJumpTo: this.seatJumpTo,
       currentDeckIndex: this.currentDeckIndex,
       onSeatMapInited: function (data) {
-        self.$emit('onSeatMapInited - ', data);
+        self.$emit('onSeatMapInited', data);
       },
       onSeatSelected: function (data) {
-        self.$emit('onSeatSelected - ', data);
+        self.$emit('onSeatSelected', data);
       },
       onSeatUnselected: function (data) {
-        self.$emit('onSeatUnselected - ', data);
+        self.$emit('onSeatUnselected', data);
       },
       onTooltipRequested: function (data) {
-        self.$emit('onTooltipRequested - ', data);
+        self.$emit('onTooltipRequested', data);
       },
       onLayoutUpdated: function (data) {
-        self.$emit('onLayoutUpdated - ', data);
+        self.$emit('onLayoutUpdated', data);
       },
       onSeatMouseLeave(data) {
-        self.$emit('onSeatMouseLeave - ', data);
+        self.$emit('onSeatMouseLeave', data);
       },
       onSeatMouseClick(data) {
-        self.$emit('onSeatMouseClick - ', data);
+        self.$emit('onSeatMouseClick', data);
       },
       onAvailabilityApplied(data) {
-        self.$emit('onAvailabilityApplied - ', data);
+        self.$emit('onAvailabilityApplied', data);
       }
     };
     external_commonjs_react_dom_commonjs2_react_dom_root_ReactDOM_default().render(external_commonjs_react_commonjs2_react_root_React_default().createElement(react_lib_root_SeatmapsReactLib_.JetsSeatMap, reactProps), this.$refs.wrapper);
