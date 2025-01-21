@@ -3,8 +3,16 @@ module.exports = defineConfig({
   transpileDependencies: false,
   configureWebpack: {
     externals: {
-      react: 'React',
-      'react-dom': 'ReactDOM',
+      react: {
+        commonjs: 'react',
+        commonjs2: 'react',
+        root: 'React',
+      },
+      'react-dom': {
+        commonjs: 'react-dom',
+        commonjs2: 'react-dom',
+        root: 'ReactDOM',
+      },
       '@seatmaps.com/react-lib': {
         commonjs: '@seatmaps.com/react-lib',
         commonjs2: '@seatmaps.com/react-lib',

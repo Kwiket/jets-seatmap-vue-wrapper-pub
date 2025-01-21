@@ -76,14 +76,14 @@ if (typeof window !== 'undefined') {
 // Indicate to webpack that this file can be concatenated
 /* harmony default export */ var setPublicPath = (null);
 
-;// CONCATENATED MODULE: external "React"
-var external_React_namespaceObject = require("React");
-var external_React_default = /*#__PURE__*/__webpack_require__.n(external_React_namespaceObject);
+;// CONCATENATED MODULE: external {"commonjs":"react","commonjs2":"react","root":"React"}
+var external_commonjs_react_commonjs2_react_root_React_namespaceObject = require("react");
+var external_commonjs_react_commonjs2_react_root_React_default = /*#__PURE__*/__webpack_require__.n(external_commonjs_react_commonjs2_react_root_React_namespaceObject);
 ;// CONCATENATED MODULE: external {"commonjs":"@seatmaps.com/react-lib","commonjs2":"@seatmaps.com/react-lib","root":"SeatmapsReactLib"}
 var react_lib_root_SeatmapsReactLib_namespaceObject = require("@seatmaps.com/react-lib");
-;// CONCATENATED MODULE: external "ReactDOM"
-var external_ReactDOM_namespaceObject = require("ReactDOM");
-var external_ReactDOM_default = /*#__PURE__*/__webpack_require__.n(external_ReactDOM_namespaceObject);
+;// CONCATENATED MODULE: external {"commonjs":"react-dom","commonjs2":"react-dom","root":"ReactDOM"}
+var external_commonjs_react_dom_commonjs2_react_dom_root_ReactDOM_namespaceObject = require("react-dom");
+var external_commonjs_react_dom_commonjs2_react_dom_root_ReactDOM_default = /*#__PURE__*/__webpack_require__.n(external_commonjs_react_dom_commonjs2_react_dom_root_ReactDOM_namespaceObject);
 ;// CONCATENATED MODULE: external {"commonjs":"vue","commonjs2":"vue","root":"Vue"}
 var external_commonjs_vue_commonjs2_vue_root_Vue_namespaceObject = require("vue");
 ;// CONCATENATED MODULE: ./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib/index.js??clonedRuleSet-40.use[1]!./node_modules/@vue/vue-loader-v15/lib/index.js??vue-loader-options!./src/components/jets-seatmap.vue?vue&type=script&lang=js&
@@ -154,10 +154,10 @@ var external_commonjs_vue_commonjs2_vue_root_Vue_namespaceObject = require("vue"
         self.$emit('onAvailabilityApplied - ', data);
       }
     };
-    external_ReactDOM_default().render(external_React_default().createElement(react_lib_root_SeatmapsReactLib_namespaceObject.JetsSeatMap, reactProps), this.$refs.wrapper);
+    external_commonjs_react_dom_commonjs2_react_dom_root_ReactDOM_default().render(external_commonjs_react_commonjs2_react_root_React_default().createElement(react_lib_root_SeatmapsReactLib_namespaceObject.JetsSeatMap, reactProps), this.$refs.wrapper);
   },
   beforeDestroy: function () {
-    external_ReactDOM_default().unmountComponentAtNode(this.$refs.wrapper);
+    external_commonjs_react_dom_commonjs2_react_dom_root_ReactDOM_default().unmountComponentAtNode(this.$refs.wrapper);
   },
   render: function () {
     return (0,external_commonjs_vue_commonjs2_vue_root_Vue_namespaceObject.h)('div', {

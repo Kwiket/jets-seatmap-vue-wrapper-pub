@@ -1,35 +1,35 @@
 (function webpackUniversalModuleDefinition(root, factory) {
 	if(typeof exports === 'object' && typeof module === 'object')
-		module.exports = factory(require("React"), require("ReactDOM"), require("@seatmaps.com/react-lib"), require("vue"));
+		module.exports = factory(require("@seatmaps.com/react-lib"), require("react"), require("react-dom"), require("vue"));
 	else if(typeof define === 'function' && define.amd)
-		define(["React", "ReactDOM", , ], factory);
+		define([, , , ], factory);
 	else if(typeof exports === 'object')
-		exports["jets-seatmap-vue-wrapper"] = factory(require("React"), require("ReactDOM"), require("@seatmaps.com/react-lib"), require("vue"));
+		exports["jets-seatmap-vue-wrapper"] = factory(require("@seatmaps.com/react-lib"), require("react"), require("react-dom"), require("vue"));
 	else
-		root["jets-seatmap-vue-wrapper"] = factory(root["React"], root["ReactDOM"], root["SeatmapsReactLib"], root["Vue"]);
-})((typeof self !== 'undefined' ? self : this), function(__WEBPACK_EXTERNAL_MODULE__24__, __WEBPACK_EXTERNAL_MODULE__314__, __WEBPACK_EXTERNAL_MODULE__74__, __WEBPACK_EXTERNAL_MODULE__203__) {
+		root["jets-seatmap-vue-wrapper"] = factory(root["SeatmapsReactLib"], root["React"], root["ReactDOM"], root["Vue"]);
+})((typeof self !== 'undefined' ? self : this), function(__WEBPACK_EXTERNAL_MODULE__74__, __WEBPACK_EXTERNAL_MODULE__843__, __WEBPACK_EXTERNAL_MODULE__807__, __WEBPACK_EXTERNAL_MODULE__203__) {
 return /******/ (function() { // webpackBootstrap
 /******/ 	"use strict";
 /******/ 	var __webpack_modules__ = ({
-
-/***/ 24:
-/***/ (function(module) {
-
-module.exports = __WEBPACK_EXTERNAL_MODULE__24__;
-
-/***/ }),
-
-/***/ 314:
-/***/ (function(module) {
-
-module.exports = __WEBPACK_EXTERNAL_MODULE__314__;
-
-/***/ }),
 
 /***/ 74:
 /***/ (function(module) {
 
 module.exports = __WEBPACK_EXTERNAL_MODULE__74__;
+
+/***/ }),
+
+/***/ 843:
+/***/ (function(module) {
+
+module.exports = __WEBPACK_EXTERNAL_MODULE__843__;
+
+/***/ }),
+
+/***/ 807:
+/***/ (function(module) {
+
+module.exports = __WEBPACK_EXTERNAL_MODULE__807__;
 
 /***/ }),
 
@@ -141,14 +141,14 @@ if (typeof window !== 'undefined') {
 // Indicate to webpack that this file can be concatenated
 /* harmony default export */ var setPublicPath = (null);
 
-// EXTERNAL MODULE: external "React"
-var external_React_ = __webpack_require__(24);
-var external_React_default = /*#__PURE__*/__webpack_require__.n(external_React_);
+// EXTERNAL MODULE: external {"commonjs":"react","commonjs2":"react","root":"React"}
+var external_commonjs_react_commonjs2_react_root_React_ = __webpack_require__(843);
+var external_commonjs_react_commonjs2_react_root_React_default = /*#__PURE__*/__webpack_require__.n(external_commonjs_react_commonjs2_react_root_React_);
 // EXTERNAL MODULE: external {"commonjs":"@seatmaps.com/react-lib","commonjs2":"@seatmaps.com/react-lib","root":"SeatmapsReactLib"}
 var react_lib_root_SeatmapsReactLib_ = __webpack_require__(74);
-// EXTERNAL MODULE: external "ReactDOM"
-var external_ReactDOM_ = __webpack_require__(314);
-var external_ReactDOM_default = /*#__PURE__*/__webpack_require__.n(external_ReactDOM_);
+// EXTERNAL MODULE: external {"commonjs":"react-dom","commonjs2":"react-dom","root":"ReactDOM"}
+var external_commonjs_react_dom_commonjs2_react_dom_root_ReactDOM_ = __webpack_require__(807);
+var external_commonjs_react_dom_commonjs2_react_dom_root_ReactDOM_default = /*#__PURE__*/__webpack_require__.n(external_commonjs_react_dom_commonjs2_react_dom_root_ReactDOM_);
 // EXTERNAL MODULE: external {"commonjs":"vue","commonjs2":"vue","root":"Vue"}
 var external_commonjs_vue_commonjs2_vue_root_Vue_ = __webpack_require__(203);
 ;// CONCATENATED MODULE: ./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib/index.js??clonedRuleSet-82.use[1]!./node_modules/@vue/vue-loader-v15/lib/index.js??vue-loader-options!./src/components/jets-seatmap.vue?vue&type=script&lang=js&
@@ -219,10 +219,10 @@ var external_commonjs_vue_commonjs2_vue_root_Vue_ = __webpack_require__(203);
         self.$emit('onAvailabilityApplied - ', data);
       }
     };
-    external_ReactDOM_default().render(external_React_default().createElement(react_lib_root_SeatmapsReactLib_.JetsSeatMap, reactProps), this.$refs.wrapper);
+    external_commonjs_react_dom_commonjs2_react_dom_root_ReactDOM_default().render(external_commonjs_react_commonjs2_react_root_React_default().createElement(react_lib_root_SeatmapsReactLib_.JetsSeatMap, reactProps), this.$refs.wrapper);
   },
   beforeDestroy: function () {
-    external_ReactDOM_default().unmountComponentAtNode(this.$refs.wrapper);
+    external_commonjs_react_dom_commonjs2_react_dom_root_ReactDOM_default().unmountComponentAtNode(this.$refs.wrapper);
   },
   render: function () {
     return (0,external_commonjs_vue_commonjs2_vue_root_Vue_.h)('div', {
