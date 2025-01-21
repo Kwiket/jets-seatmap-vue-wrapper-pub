@@ -28,46 +28,92 @@ export default {
     'onAvailabilityApplied',
   ],
 
+  watch: {
+    flight: 'renderReact',
+    config: 'renderReact',
+    availability: 'renderReact',
+    passengers: 'renderReact',
+    seatJumpTo: {
+      handler: 'renderReact',
+      deep: true,
+    },
+    currentDeckIndex: 'renderReact',
+  },
+
+  methods: {
+    renderReact() {
+      const self = this;
+      const reactProps = {
+        flight: this.flight,
+        config: this.config,
+        availability: this.availability,
+        passengers: this.passengers,
+        seatJumpTo: this.seatJumpTo,
+        currentDeckIndex: this.currentDeckIndex,
+
+        onSeatMapInited: function (data) {
+          console.log(
+            '[@seatmaps.com/react-lib-vue-wrapper] onSeatMapInited:',
+            data
+          );
+          self.$emit('onSeatMapInited', data);
+        },
+        onSeatSelected: function (data) {
+          self.$emit('onSeatSelected', data);
+        },
+        onSeatUnselected: function (data) {
+          self.$emit('onSeatUnselected', data);
+        },
+        onTooltipRequested: function (data) {
+          console.log(
+            '[@seatmaps.com/react-lib-vue-wrapper] onTooltipRequested:',
+            data
+          );
+
+          self.$emit('onTooltipRequested', data);
+        },
+        onLayoutUpdated: function (data) {
+          console.log(
+            '[@seatmaps.com/react-lib-vue-wrapper] onLayoutUpdated:',
+            data
+          );
+          self.$emit('onLayoutUpdated', data);
+        },
+        onSeatMouseLeave(data) {
+          self.$emit('onSeatMouseLeave', data);
+        },
+        onSeatMouseClick(data) {
+          console.log(
+            '[@seatmaps.com/react-lib-vue-wrapper] onSeatMouseClick:',
+            data
+          );
+          self.$emit('onSeatMouseClick', data);
+        },
+        onAvailabilityApplied(data) {
+          console.log(
+            '[@seatmaps.com/react-lib-vue-wrapper] onAvailabilityApplied:',
+            data
+          );
+          self.$emit('onAvailabilityApplied', data);
+        },
+      };
+
+      console.log(
+        '[@seatmaps.com/react-lib-vue-wrapper] RENDER REACT METHOD: ',
+        {
+          reactProps,
+        }
+      );
+
+      ReactDOM.render(
+        React.createElement(JetsSeatMap, reactProps),
+        this.$refs.wrapper
+      );
+    },
+  },
+
   mounted() {
-    const self = this;
-    const reactProps = {
-      flight: this.flight,
-      config: this.config,
-      availability: this.availability,
-      passengers: this.passengers,
-      seatJumpTo: this.seatJumpTo,
-      currentDeckIndex: this.currentDeckIndex,
-
-      onSeatMapInited: function (data) {
-        self.$emit('onSeatMapInited', data);
-      },
-      onSeatSelected: function (data) {
-        self.$emit('onSeatSelected', data);
-      },
-      onSeatUnselected: function (data) {
-        self.$emit('onSeatUnselected', data);
-      },
-      onTooltipRequested: function (data) {
-        self.$emit('onTooltipRequested', data);
-      },
-      onLayoutUpdated: function (data) {
-        self.$emit('onLayoutUpdated', data);
-      },
-      onSeatMouseLeave(data) {
-        self.$emit('onSeatMouseLeave', data);
-      },
-      onSeatMouseClick(data) {
-        self.$emit('onSeatMouseClick', data);
-      },
-      onAvailabilityApplied(data) {
-        self.$emit('onAvailabilityApplied', data);
-      },
-    };
-
-    ReactDOM.render(
-      React.createElement(JetsSeatMap, reactProps),
-      this.$refs.wrapper
-    );
+    this.renderReact();
   },
 
   beforeDestroy: function () {

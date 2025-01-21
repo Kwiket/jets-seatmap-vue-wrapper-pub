@@ -185,41 +185,65 @@ var external_commonjs_vue_commonjs2_vue_root_Vue_ = __webpack_require__(203);
     }
   },
   emits: ['onSeatMapInited', 'onSeatSelected', 'onSeatUnselected', 'onTooltipRequested', 'onLayoutUpdated', 'onSeatMouseLeave', 'onSeatMouseClick', 'onAvailabilityApplied'],
+  watch: {
+    flight: 'renderReact',
+    config: 'renderReact',
+    availability: 'renderReact',
+    passengers: 'renderReact',
+    seatJumpTo: {
+      handler: 'renderReact',
+      deep: true
+    },
+    currentDeckIndex: 'renderReact'
+  },
+  methods: {
+    renderReact() {
+      const self = this;
+      const reactProps = {
+        flight: this.flight,
+        config: this.config,
+        availability: this.availability,
+        passengers: this.passengers,
+        seatJumpTo: this.seatJumpTo,
+        currentDeckIndex: this.currentDeckIndex,
+        onSeatMapInited: function (data) {
+          console.log('[@seatmaps.com/react-lib-vue-wrapper] onSeatMapInited:', data);
+          self.$emit('onSeatMapInited', data);
+        },
+        onSeatSelected: function (data) {
+          self.$emit('onSeatSelected', data);
+        },
+        onSeatUnselected: function (data) {
+          self.$emit('onSeatUnselected', data);
+        },
+        onTooltipRequested: function (data) {
+          console.log('[@seatmaps.com/react-lib-vue-wrapper] onTooltipRequested:', data);
+          self.$emit('onTooltipRequested', data);
+        },
+        onLayoutUpdated: function (data) {
+          console.log('[@seatmaps.com/react-lib-vue-wrapper] onLayoutUpdated:', data);
+          self.$emit('onLayoutUpdated', data);
+        },
+        onSeatMouseLeave(data) {
+          self.$emit('onSeatMouseLeave', data);
+        },
+        onSeatMouseClick(data) {
+          console.log('[@seatmaps.com/react-lib-vue-wrapper] onSeatMouseClick:', data);
+          self.$emit('onSeatMouseClick', data);
+        },
+        onAvailabilityApplied(data) {
+          console.log('[@seatmaps.com/react-lib-vue-wrapper] onAvailabilityApplied:', data);
+          self.$emit('onAvailabilityApplied', data);
+        }
+      };
+      console.log('[@seatmaps.com/react-lib-vue-wrapper] RENDER REACT METHOD: ', {
+        reactProps
+      });
+      external_commonjs_react_dom_commonjs2_react_dom_root_ReactDOM_default().render(external_commonjs_react_commonjs2_react_root_React_default().createElement(react_lib_root_SeatmapsReactLib_.JetsSeatMap, reactProps), this.$refs.wrapper);
+    }
+  },
   mounted() {
-    const self = this;
-    const reactProps = {
-      flight: this.flight,
-      config: this.config,
-      availability: this.availability,
-      passengers: this.passengers,
-      seatJumpTo: this.seatJumpTo,
-      currentDeckIndex: this.currentDeckIndex,
-      onSeatMapInited: function (data) {
-        self.$emit('onSeatMapInited', data);
-      },
-      onSeatSelected: function (data) {
-        self.$emit('onSeatSelected', data);
-      },
-      onSeatUnselected: function (data) {
-        self.$emit('onSeatUnselected', data);
-      },
-      onTooltipRequested: function (data) {
-        self.$emit('onTooltipRequested', data);
-      },
-      onLayoutUpdated: function (data) {
-        self.$emit('onLayoutUpdated', data);
-      },
-      onSeatMouseLeave(data) {
-        self.$emit('onSeatMouseLeave', data);
-      },
-      onSeatMouseClick(data) {
-        self.$emit('onSeatMouseClick', data);
-      },
-      onAvailabilityApplied(data) {
-        self.$emit('onAvailabilityApplied', data);
-      }
-    };
-    external_commonjs_react_dom_commonjs2_react_dom_root_ReactDOM_default().render(external_commonjs_react_commonjs2_react_root_React_default().createElement(react_lib_root_SeatmapsReactLib_.JetsSeatMap, reactProps), this.$refs.wrapper);
+    this.renderReact();
   },
   beforeDestroy: function () {
     external_commonjs_react_dom_commonjs2_react_dom_root_ReactDOM_default().unmountComponentAtNode(this.$refs.wrapper);
