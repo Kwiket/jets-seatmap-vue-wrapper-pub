@@ -39,28 +39,28 @@ export default {
       currentDeckIndex: this.currentDeckIndex,
 
       onSeatMapInited: function (data) {
-        self.$emit('onSeatMapInited - ', data);
+        self.$emit('onSeatMapInited', data);
       },
       onSeatSelected: function (data) {
-        self.$emit('onSeatSelected - ', data);
+        self.$emit('onSeatSelected', data);
       },
       onSeatUnselected: function (data) {
-        self.$emit('onSeatUnselected - ', data);
+        self.$emit('onSeatUnselected', data);
       },
       onTooltipRequested: function (data) {
-        self.$emit('onTooltipRequested - ', data);
+        self.$emit('onTooltipRequested', data);
       },
       onLayoutUpdated: function (data) {
-        self.$emit('onLayoutUpdated - ', data);
+        self.$emit('onLayoutUpdated', data);
       },
       onSeatMouseLeave(data) {
-        self.$emit('onSeatMouseLeave - ', data);
+        self.$emit('onSeatMouseLeave', data);
       },
       onSeatMouseClick(data) {
-        self.$emit('onSeatMouseClick - ', data);
+        self.$emit('onSeatMouseClick', data);
       },
       onAvailabilityApplied(data) {
-        self.$emit('onAvailabilityApplied - ', data);
+        self.$emit('onAvailabilityApplied', data);
       },
     };
 
